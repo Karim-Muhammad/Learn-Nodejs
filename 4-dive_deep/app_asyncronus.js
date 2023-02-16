@@ -1,6 +1,10 @@
 const request = require('http').request;
 const start = Date.now();
 
+// Event Loop algorithm
+while(is_callstack_empty) {
+     // tick()
+}
 
 request('http://localhost:3000', (res)=> {
      res.on('data', _=> console.log("data"));
