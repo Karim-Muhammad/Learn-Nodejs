@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 
-app.all('/', (req, res, next)=> {
-   console.log('Home Page');
-   res.send("Home Page")
-})
+const userRouter = require('./routes/userRouter');
+// console.log(userRouter);
 
+app.use('/user', userRouter);
+// one of benefits using `.use()` in this case, in case we have more children in this route
+// /user/courses | /user/sign-up | ...
+// 
 
 app.all('*', (req, res, next)=> {
    console.log('all general')
