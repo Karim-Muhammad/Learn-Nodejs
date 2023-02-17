@@ -190,10 +190,10 @@ const router = require('express').Router();
 
 
 __note__, we use `router` instead of `app` because we want to use this middleware in specific route, not all routes.
-so we use `router` instead of `app` to use this middleware in specific route
-if we used .use('/), will cause some error
+so we use `router` instead of `app` to use this middleware in specific route.
 
-so advice: use `.use()` in case this routes has more children routes and in another file like <type>Router.js, and use `.all()` in case this route has no children routes, because it will match it exactly.
+> if we used `router.use('/')` instead `router.all('/')`  will cause some logic error in case this route has children,
+> so advice: use `.use()` in case this routes has more children routes and in another file like <type>Router.js, and use `.all()` in case this route has no children routes, because it will match it exactly.
 
 ```js
 router.all('/', (req, res, next)=> {
