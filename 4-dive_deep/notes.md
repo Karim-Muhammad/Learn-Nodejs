@@ -17,8 +17,14 @@
 2. make all requests asynchronous, means all running with together
    not all requests go to server, they can go to file system modules to work on, or crypto modules, it can any modules do operation, not only server
 #### Difference between MultiThreading vs. Asyncronus
-MultiThreading:
-Asyncronus:
+*MultiThreading*: depend on number of cores and threads, and it good for purposes that CPU-intensive tasks, like need complex math, Image Processing, Encryption
+
+*Asynchronous*: It is not depend on number of cores and threads
+all async function go to kernel of operating system and create for each one of them thread :) yes, these threads not block main nodejs thread/event loop, hence it is unlike normal threads that block main threads
+and if you used this approach with encryption for example, it will give bad usage, so this works with http modules of database very good
+
+and Nodejs is a Single Thread (main thread/event loop) but it has some multi-threads function that exist in V8 or Libuv that written in C++
+as well, we can write C++ code in Nodejs :)
 
 #### Threading Schedule (operating system)
 
@@ -33,3 +39,10 @@ are there any callbacks waiting?
 1. V8 (some C++ and JS) (Single Thread)
 2. Libuv (All Library made by Pure C++) (some functions Multi-Threads)
    > This library that make javascript dealing with file systems
+
+
+*Notes*
+more threads need more cores for works smoothly
+more threads with less cores takes more time
+---
+some function based on our OS, may works with threading or async

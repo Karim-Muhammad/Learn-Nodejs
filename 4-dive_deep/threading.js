@@ -1,7 +1,9 @@
 const crypto = require('crypto');
 const pbkdf2 = crypto.pbkdf2;
 
+// UNIX (Linux, Mac)
 // process.env.UV_THREADPOOL_SIZE = 2; //to determine number of thread operating system will handling
+// 
 // default number of threads the `Libuv` provide 4 threads
 const start = Date.now();
 
@@ -31,4 +33,7 @@ pbkdf2('pass', 'salt', 100000, 5, 'sha512', _=> {
 
 pbkdf2('pass', 'salt', 100000, 5, 'sha512', _=> {
      console.log("7: ", Date.now() - start);
+})
+pbkdf2('pass', 'salt', 100000, 5, 'sha512', _=> {
+     console.log("8: ", Date.now() - start);
 })
