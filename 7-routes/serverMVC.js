@@ -7,7 +7,7 @@ const userRouter = require('./routes/userRouter');
 app.use('/user', userRouter);
 // one of benefits using `.use()` in this case, in case we have more children in this route
 // /user/courses | /user/sign-up | ...
-// 
+// Question, userRouter is a Callback???? Yes, it is a Callback function
 
 app.all('*', (req, res, next)=> {
    console.log('all general')
