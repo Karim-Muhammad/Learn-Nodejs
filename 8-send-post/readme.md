@@ -1,4 +1,4 @@
 read these in order:
-notes.md
-notes-body.md
-notes-exporess.md
+1. notes.md
+2. notes-body.md
+3. notes-exporess.md
