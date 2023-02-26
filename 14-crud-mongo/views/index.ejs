@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %> <%# relative to current file %>
+  <body>
+    <h1>Hello From Index.html</h1>
+
+    <h3>Create Users</h3>
+    <form action="/" method="post" class="create-users">
+      <input type="text" name="username" placeholder="Username" /> <br />
+      <input type="text" name="job" placeholder="Job" /> <br />
+      <input type="number" name="age" placeholder="Age" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <h3>Search Users</h3>
+    <div class="search-users">
+      <input type="number" name="srch_age" placeholder="search with age" />
+      <button onclick="searchAge()">Search</button>
+    </div>
+
+    <form action="/updateUser" method="get" class="update-users">
+      <input type="text" name="oldName" placeholder="Old Name" required />
+      <br />
+      <input type="text" name="username" placeholder="New Name" /> <br />
+      <input type="text" name="job" placeholder="New Job" /> <br />
+      <input type="number" name="age" placeholder="New Age" />
+      <button type="submit">Submit</button>
+    </form>
+    <h3>Update Users</h3>
+    <% if (typeof uname !== 'undefined') { %>
+
+    <h2>Hello <%=  uname %></h2>
+
+    <% } else { %>
+
+    <h2>Hello Guest</h2>
+
+    <% } %> <%# Comment %>
+
+    <form action="/deleteUser" method="get">
+      <input type="text" name="username" placeholder="username" />
+      <button type="submit">Delete</button>
+    </form>
+    <h2>All Members</h2>
+    <ul>
+      <% for(let i = 0; i < members.length; i++) { %>
+      <li>
+        <a href="/user/<%=members[i]._id%>"><%= members[i].username %></a> : <%=
+        members[i].age %>
+      </li>
+      <%}%>
+    </ul>
+
+    <script>
+      function searchAge() {
+        let age = document.querySelector('input[name="srch_age"]').value;
+        window.location.href = `/search/?age=${age}`;
+      }
+    </script>
+  </body>
+</html>
