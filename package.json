@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "serve-favicon": "^2.5.0"
+  }
+}

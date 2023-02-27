@@ -151,3 +151,8 @@ app.listen(3000, ()=> {
 // express has two types of middleware, one is application level middleware, and one is router level middleware
 // application level middleware is like `app.use()` and `app.all()`, and router level middleware is like `router.use()` and `router.all()`
 // so we can use `app.use()` and `app.all()` in our app.js file, and we can use `router.use()` and `router.all()` in our routes files
+
+
+
+
+

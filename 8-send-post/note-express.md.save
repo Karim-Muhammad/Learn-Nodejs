@@ -34,11 +34,9 @@ __NOTE: what is that means .json()?__
 __NOTE: what is that means `extended: true`?__
 > it means that we can parse nested objects, and arrays.
 > if we set it to `false`, we can't parse nested objects, and arrays.
-
+> read `qs` in npm (
 > also that means something else, if `true` that means use package called `qs` to parse data.
 > if `false` that means use package called 'querystring' to parse data.
-
-> read `qs` package(Awesome Package) in npm (https://www.npmjs.com/package/qs#readme)
 
 ##### question now, what is difference between these two packages (querystring, qs)?
 > `qs` is more powerful, and more flexible, but `querystring` is more simple, and more efficient.
