@@ -1,0 +1,43 @@
+<!-- Start Navbar -->
+<nav class="navbar navbar-dark navbar-expand-md bg-dark" data-bs-theme="light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="/">ECOM</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav text-light">
+        <!--  -->
+        <!-- User Routes Dynamic  -->
+        <% const user_routes = ["cart", "orders" , "login" , "signup" ]; %> <%
+        for(let route of user_routes) { %>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/<%= route %>"> <%= route %> </a>
+        </li>
+        <% } %>
+
+        <!-- Admin routes Dynamic -->
+        <%# if(user && user.role==="admin" ) { %> <% const
+        admin_routes={"dashboard": "Dashboard", "add": "Add Product", "orders":
+        "Manage Orders", "bill": "Bills"}; %> <% for(let route in admin_routes)
+        {%>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/admin/<%= route %>">
+            <%= admin_routes[route] %>
+          </a>
+        </li>
+        <% } %>
+        <!--  -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->

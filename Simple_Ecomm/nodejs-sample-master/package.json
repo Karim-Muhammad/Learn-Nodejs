@@ -1,0 +1,77 @@
+{
+  "name": "ecommerce",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A MVC framework with Node.js + Express.js",
+  "main": "server.js",
+  "LOGGER_LEVEL": "tests",
+  "scripts": {
+    "start": "node ./server/server.js",
+    "test": "mocha ./server/test --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marcusvas/nodejs-sample.git"
+  },
+  "keywords": [
+    "mvc",
+    "express.js",
+    "node.js",
+    "expressjs",
+    "nodejs"
+  ],
+  
+  "license": "MIT",
+ "dependencies": {
+    "async": "~0.9.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.4.3", 
+    "compression": "~1.0.8", 
+    "connect-ensure-login": "~0.1.1", 
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.3.2", 
+    "email-templates": "~1.2.0", 
+    "errorhandler": "~1.1.1", 
+    "express": "~4.5.1", 
+    "express-session": "~1.6.5", 
+    "helmet": "~0.4.0", 
+    "lodash": "~3.5.0", 
+    "method-override": "~2.1.0", 
+    "mongoose": "~4.0.5", 
+    "morgan": "~1.1.1", 
+    "multer": "~0.1.6", 
+    "node-dir": "~0.1.5", 
+    "node-uuid": "~1.4.1", 
+    "nodemailer": "~1.3.1", 
+    "nodemailer-sendgrid-transport": "~0.1.0", 
+    "passport": "~0.2.0", 
+    "passport-facebook": "~1.0.3", 
+    "passport-google-oauth": "~0.1.5", 
+    "passport-local": "~1.0.0",
+    "passport-local-mongoose": "~0.3.0", 
+    "passport-twitter": "~1.0.2", 
+    "serve-favicon": "~2.0.1", 
+    "shortid": "~2.1.3", 
+    "swig": "~1.4.1", 
+    "unirest": "~0.2.9",
+    "winston": "~0.8.3",
+    "express-validator":"~2.12.1",
+    "hashmap": "~2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.6",
+    "gulp-concat": "~2.3.3",
+    "gulp-jshint": "~1.7.1",
+    "gulp-minify-css": "~0.3.7",
+    "gulp-minify-html": "~0.1.4",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.3.1",
+    "gulp-util": "~3.0.0",
+    "should": "~4.3.1",
+    "superagent": "~0.21.0",
+    "supertest": "~0.15.0",
+    "expect.js": "~0.3.1"
+  
+  }
+}

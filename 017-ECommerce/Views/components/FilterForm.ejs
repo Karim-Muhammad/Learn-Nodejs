@@ -1,0 +1,21 @@
+<form action="/" method="POST">
+    <div class="my-5 d-flex gap-2">
+        <select title="category" class="form-control w-25" name="category" id="category">
+            <% const categiresSet = new Set() %>
+            <% for(let product of products) { %>
+                <% if (typeof(product.category)==='object') { %>
+                    <% product.category.forEach(function(category) { %>
+                        <% categiresSet.add(category) %>
+                    <% }); %>
+                <% } else { %>
+                        <% categiresSet.add(product.category) %>
+                <% } %>
+              <% } %>
+
+            <% for(let product of Array.from(categiresSet)) { %>
+                <option value="<%= product %>s"><%= product.charAt(0).toUpperCase()+product.slice(1) %></option>    
+            <% } %>
+            <input class="btn btn-success" type="submit" value="Filter">
+        </select>
+    </div>
+</form>

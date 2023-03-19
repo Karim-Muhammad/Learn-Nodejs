@@ -151,3 +151,28 @@ NoSQL has 2 types of approaches you can follow:
 ---
 
 ###### What is Pipline? Aggregation Pipeline? [read](https://docs.mongodb.com/manual/core/aggregation-pipeline/)
+
+<!--  -->
+<!--  -->
+---
+
+###### What is Aggregation Framework? [read](https://docs.mongodb.com/manual/core/aggregation-pipeline/)
+<!--  -->
+<!--  -->
+
+---
+
+##### Read Operations
+```js
+db.collection.find(
+    { <query> },
+    { <projection> }
+)
+
+db.users.find(
+    {age: {$gt: 20}},
+    {name: 1, age: 1}
+)
+```
+> what is means projection? that's means you can select the fields you want to see.
+

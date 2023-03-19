@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Login Page</h1>
+        <form action="/login" method="post" style="max-width: 300px;">
+            <input type="text" name="username" id="username"/>
+            <input type="password" name="password" id="password"/>
+            <input type="submit" value="Submit"/>
+        </form>
+        {% if user %}
+          <a href="/logout">Logout</a>
+        {% else %}
+          <br>
+          <a href="/register">Criar nova conta</a>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<%- include("../partials/Header.ejs")  %>
+<%- include("../components/Navbar.ejs")  %>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        src="/<%= product.image %>.jpg"
+        alt="<%= product.name %>"
+        class="img-fluid"
+      />
+    </div>
+    <div class="col-md-6">
+      <h1><%= product.name %></h1>
+      <h2 class="text-muted">$<%= product.price %></h2>
+      <p class="lead"><%= product.description %></p>
+      <form action="/cart">
+        <div class="form-group">
+          <input type="hidden" name="product_name" value="<%= product.name %>">
+          <input class="form-control text-secondary" type="number" name="amount" id="amount" value="1">
+          <input class="form-control btn btn-primary" type="submit" value="Add to cart">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/Footer.ejs")  %>

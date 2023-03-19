@@ -1,0 +1,40 @@
+<%- include("../partials/Header.ejs") %>
+<%- include("../components/Navbar.ejs") %>
+
+<% if(products.length !== 0) { %>
+    <div class="container text-center">
+      <%- include("../components/FilterForm.ejs") %>
+      <div class="row">
+        <% for(let product of products) { %>
+        <div class="col-12 col-lg-3 col-md-6">
+          <div class="card">
+            <img src="<%= product.image %>.jpg" class="card-img-top" alt="<%= product.name %>" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <a class="text-primary text-decoration-none" href="/product/<%= product._id  %>"><%= product.name %></a>
+              </h5>
+              <p class="card-text text-secondary"><%= product.description %></p>
+              <p class="text-danger">$<%= product.price %>/1qty</p>
+
+              <form method="/cart">
+                <div class="form-group">
+                    <input type="hidden" name="product_name" value="<%= product.name %>">
+                    <input class="form-control text-secondary" type="number" name="amount" id="amount" value="1">
+                    <input class="form-control btn btn-primary" type="submit" value="add to cart">
+                </div>
+              </form>
+            </div>
+            <!-- ./Card-Body -->
+          </div>
+          <!-- ./Card -->
+        </div>
+      <!-- ./Column -->
+      <% } %>
+      </div>
+      <!-- ./Row -->
+    </div>
+<!-- ./Container -->
+<% } else { %>
+  <%- include("../components/NotFound.ejs") %>
+<% } %>
+<%- include("../partials/Footer.ejs") %>
